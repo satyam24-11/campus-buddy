@@ -67,14 +67,14 @@ const Footer = () => {
             <hr  />
             <div>
               <h5 className="text-white mt-[10px]">
-                © 2023 Axios, Inc. All rights reserved.
+                © 2024 , Inc. All rights reserved.
               </h5>
             </div>
           </div>
         </div>
         <div className="created-by mb-[31px]">
           <div >
-            <h5 className="text-center">Created by Debsourya, Mrittik and Soumargha</h5>
+            <h5 className="text-center">Created by Satyam Kumar</h5>
           </div>
         </div>
       </footer>

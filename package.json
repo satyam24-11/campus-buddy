@@ -1,5 +1,5 @@
 {
-  "name": "buy-sell-hackathon",
+  "name": "buy-sell-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -31,5 +31,10 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  }
+  },
+  "description": "Access this website",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

@@ -11,7 +11,6 @@ import {
   doc,
 } from "firebase/firestore";
 import { UserAuth } from "../context/AuthContext";
-// import Image from "react-image";
 
 const Buy = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -19,8 +18,8 @@ const Buy = () => {
   const [searchText, setSearchText] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(null);
 
-  const { user} = UserAuth()
-  const navigate = useNavigate()
+  const { user } = UserAuth();
+  const navigate = useNavigate();
 
   const collectionRef = collection(db, "products");
 
@@ -60,6 +59,16 @@ const Buy = () => {
     );
   };
 
+  const handleDeleteProduct = async (productId) => {
+    try {
+      await deleteDoc(doc(db, "products", productId));
+      setProducts(products.filter(product => product.id !== productId));
+      setAllProducts(allProducts.filter(product => product.id !== productId));
+    } catch (error) {
+      console.error("Error deleting product: ", error);
+    }
+  };
+
   return (
     <>
       <div>
@@ -69,8 +78,8 @@ const Buy = () => {
           <form className="w-[80%]">
             <div className="flex">
               <select className="w-[80px] sm:w-[15%] outline-none border-gray-300 rounded-md"
-                name="cars"
-                id="cars"
+                name="categories"
+                id="categories"
                 onChange={(e) => {
                   if (e.target.value === "all") {
                     setProducts(allProducts);
@@ -127,13 +136,14 @@ const Buy = () => {
                 <div className="product-details">
                   <h3>{product.title}</h3>
                   <p>₹{product.price}</p>
-                  <button onClick={()=>{
-                    if(!user){
+                  <button style={{ color: "blue", paddingRight: "8px" }} onClick={() => {
+                    if (!user) {
                       alert('SignIn to view details')
-                    } else{
+                    } else {
                       navigate(`/products/${product.id}`)
                     }
                   }}>View Details</button>
+                  <button style={{ color: "red" }} onClick={() => handleDeleteProduct(product.id)}>Delete</button>
                 </div>
               </div>
             ))}
