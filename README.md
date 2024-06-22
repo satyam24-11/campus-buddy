@@ -1,4 +1,3 @@
-Access this website from here : https://axios-buy-sell-platform.vercel.app/
 
 # Campus Buddy - Your Ultimate Marketplace for Renting, Selling, and Buying Goods
 
