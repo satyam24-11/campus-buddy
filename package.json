@@ -31,13 +31,5 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  },
-  "description": "Access this website",
-  "main": "postcss.config.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": ">=14.0.0"
   }
 }
